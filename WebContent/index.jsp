@@ -3,5 +3,5 @@
 
 <%
 System.out.println("hello..");
-response.sendRedirect("system/index");
+response.sendRedirect("system/login");
 %>
