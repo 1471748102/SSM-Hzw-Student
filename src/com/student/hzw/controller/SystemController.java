@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -40,10 +39,10 @@ public class SystemController {
 	
 	@RequestMapping(value = "/index",method=RequestMethod.GET)
 	public ModelAndView index(ModelAndView model){
-		model.setViewName("system/index");
+		model.setViewName("hello");
 		return model;
 	}
-	
+	//-------------------------------------------------------------------------------------------------------------------------------------------------------
 	/**
 	 * 登陆页面
 	 * @param model
@@ -65,7 +64,7 @@ public class SystemController {
 		request.getSession().setAttribute("user", null);
 		return "redirect:login";
 	}
-	
+	//-------------------------------------------------------------------------------------------------------------------------------------------------------
 	/**
 	 * 登录表单提交
 	 * @return
@@ -109,6 +108,7 @@ public class SystemController {
 		request.getSession().setAttribute("loginCpacha", null);
 		//从数据库中去查找用户
 	
+		System.out.println("连接数据库");
 			User user = userService.findByUserName(username);
 			if(user == null){
 				ret.put("type", "error");
@@ -127,7 +127,7 @@ public class SystemController {
 		ret.put("msg", "登录成功!");
 		return ret;
 	}
-	
+	//-------------------------------------------------------------------------------------------------------------------------------------------------
 	/**
 	 * 显示 验证码
 	 * @param request

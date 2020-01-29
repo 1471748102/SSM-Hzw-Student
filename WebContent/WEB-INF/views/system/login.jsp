@@ -40,7 +40,7 @@
 				data: data, 
 				dataType: "json", //返回数据类型
 				success: function(data){
-					if("sucesss" == data.type){
+					if("success" == data.type){
 						window.parent.location.href = "index";
 					} else{	
 						
