@@ -28,7 +28,7 @@
 	$(function(){
 		//点击图片切换验证码
 		$("#vcodeImg").click(function(){
-			this.src="get_cpacha?vl=5&h=30&t="+new Date().getTime();
+			this.src="get_cpacha?vl=2&h=30&t="+new Date().getTime();
 		});
 		
 		//登录
@@ -86,7 +86,7 @@
       <div class="row cl">
         <div class="formControls col-8 col-offset-3">
           <input class="input-text size-L" name="vcode" type="text" placeholder="请输入验证码" style="width: 200px;">
-          <img title="点击图片切换验证码" id="vcodeImg" src="get_cpacha?vl=5&h=30"></div>
+          <img title="点击图片切换验证码" id="vcodeImg" src="get_cpacha?vl=2&h=30"></div>
       </div>
       
       <div class="mt-20 skin-minimal" style="text-align: center;">

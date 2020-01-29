@@ -92,7 +92,7 @@
 		<!-- 注意使用 sqlSessionFactoryBeanName 避免出现spring 扫描组件失效问题 -->
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
 	</bean>
- 
+
 	<bean id="gson" class="com.google.gson.Gson" scope="prototype"></bean>
 
 </beans>
