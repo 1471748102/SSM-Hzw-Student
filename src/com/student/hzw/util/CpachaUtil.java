@@ -1,4 +1,4 @@
-package com.student.hzw.utils;
+package com.student.hzw.util;
 
 import java.awt.Color;
 import java.awt.Font;
