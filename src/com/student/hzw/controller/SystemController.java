@@ -39,7 +39,7 @@ public class SystemController {
 	
 	@RequestMapping(value = "/index",method=RequestMethod.GET)
 	public ModelAndView index(ModelAndView model){
-		model.setViewName("hello");
+		model.setViewName("system/index");
 		return model;
 	}
 	//-------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -54,16 +54,7 @@ public class SystemController {
 		return model;
 	}
 	
-	/**
-	 * 注销登录 
-	 * @param request
-	 * @return
-	 */
-	@RequestMapping(value = "/login_out",method=RequestMethod.GET)
-	public String loginOut(HttpServletRequest request){
-		request.getSession().setAttribute("user", null);
-		return "redirect:login";
-	}
+	
 	//-------------------------------------------------------------------------------------------------------------------------------------------------------
 	/**
 	 * 登录表单提交
@@ -107,7 +98,7 @@ public class SystemController {
 		}
 		request.getSession().setAttribute("loginCpacha", null);
 		//从数据库中去查找用户
-	
+	    //先不用判断是学生还是教师
 		System.out.println("连接数据库");
 			User user = userService.findByUserName(username);
 			if(user == null){
@@ -121,7 +112,7 @@ public class SystemController {
 				return ret;
 			}
 		
-		
+			request.getSession().setAttribute("user", user);
 	
 		ret.put("type", "success");
 		ret.put("msg", "登录成功!");
