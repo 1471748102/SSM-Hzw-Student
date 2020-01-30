@@ -98,8 +98,8 @@ public class SystemController {
 		}
 		request.getSession().setAttribute("loginCpacha", null);
 		//从数据库中去查找用户
-	    //先不用判断是学生还是教师
-		System.out.println("连接数据库");
+		if(type == 2){
+			//管理员
 			User user = userService.findByUserName(username);
 			if(user == null){
 				ret.put("type", "error");
@@ -111,9 +111,11 @@ public class SystemController {
 				ret.put("msg", "密码错误!");
 				return ret;
 			}
-		
 			request.getSession().setAttribute("user", user);
-	
+		}
+		if(type == 1){
+		}
+		request.getSession().setAttribute("userType", type);
 		ret.put("type", "success");
 		ret.put("msg", "登录成功!");
 		return ret;

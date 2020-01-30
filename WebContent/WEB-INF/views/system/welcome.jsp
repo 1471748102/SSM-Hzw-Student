@@ -11,7 +11,7 @@
 <div title="欢迎使用" style="padding:20px;overflow:hidden; color:red; " >
 	<p style="font-size: 50px; line-height: 60px; height: 60px;">${systemInfo.schoolName}</p>
 	<p style="font-size: 25px; line-height: 30px; height: 30px;">欢迎使用学生信息管理系统</p>
-  	<p>开发人员：artisan</p>
+  	<p>开发人员：hzw</p>
   	<p>开发周期：2019/12/31 --- 2019/1/7（共计7天）</p>
   	
   	<hr />

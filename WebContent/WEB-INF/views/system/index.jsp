@@ -15,31 +15,31 @@
     <script type="text/javascript" src="../easyui/jquery.easyui.min.js"></script>
 	<script type="text/javascript" src='../easyui/js/outlook2.js'> </script>
     <script type="text/javascript">
-    var _menus = {"menus":[
-		<c:if test="${userType == 1}">
-		{"menuid":"1","icon":"","menuname":"用户（管理员）管理",
-			"menus":[
-					{"menuid":"11","menuname":"用户列表","icon":"icon-user-teacher","url":"../user/list"}
-				]
-		},
-		</c:if>
-		{"menuid":"3","icon":"","menuname":"年级信息管理",
-			"menus":[
-					{"menuid":"31","menuname":"年级列表","icon":"icon-world","url":"../grade/list"},
-				]
-		},
-		{"menuid":"4","icon":"","menuname":"班级信息管理",
-			"menus":[
-					{"menuid":"41","menuname":"班级列表","icon":"icon-house","url":"../clazz/list"},
-				]
-		},
-		{"menuid":"2","icon":"","menuname":"学生信息管理",
-			"menus":[
-					{"menuid":"21","menuname":"学生列表","icon":"icon-user-student","url":"../student/list"},
-				]
-		},
-		
-]};
+	 var _menus = {"menus":[
+			<c:if test="${userType == 2}">
+			{"menuid":"1","icon":"","menuname":"用户（管理员）管理",
+				"menus":[
+						{"menuid":"11","menuname":"用户列表","icon":"icon-user-teacher","url":"../user/list"}
+					]
+			},
+			</c:if>
+			{"menuid":"3","icon":"","menuname":"年级信息管理",
+				"menus":[
+						{"menuid":"31","menuname":"年级列表","icon":"icon-world","url":"../grade/list"},
+					]
+			},
+			{"menuid":"4","icon":"","menuname":"班级信息管理",
+				"menus":[
+						{"menuid":"41","menuname":"班级列表","icon":"icon-house","url":"../clazz/list"},
+					]
+			},
+			{"menuid":"2","icon":"","menuname":"学生信息管理",
+				"menus":[
+						{"menuid":"21","menuname":"学生列表","icon":"icon-user-student","url":"../student/list"},
+					]
+			},
+			
+	]};
 
 
 </script>
@@ -52,9 +52,9 @@
 		</div>
 	</noscript>
     <div region="north" split="true" border="false" style="overflow: hidden; height: 30px;
-        background: url(images/layout-browser-hd-bg.gif) #7f99be repeat-x center 50%;
+    	background: #7f99be;
         line-height: 20px;color: #fff; font-family: Verdana, 微软雅黑,黑体">
-        <span style="float:right; padding-right:20px;" class="head"><span style="color:red; font-weight:bold;">${user.name}&nbsp;</span>您好&nbsp;&nbsp;&nbsp;<a href="SystemServlet?method=LoginOut" id="loginOut">安全退出</a></span>
+        <span style="float:right; padding-right:20px;" class="head"><span style="color:red; font-weight:bold;">${user.username}&nbsp;</span>您好&nbsp;&nbsp;&nbsp;<a href="login_out" id="loginOut">安全退出</a></span>
         <span style="padding-left:10px; font-size: 16px; ">Hzw学生信息管理系统</span>
     </div>
     <div region="south" split="true" style="height: 30px; background: #D2E0F2; ">
@@ -71,6 +71,6 @@
 			<jsp:include page="welcome.jsp" />
 		</div>
     </div>
-	<iframe width=0 height=0 src="refresh.jsp"></iframe>
+    <iframe width=0 height=0 src="refresh.jsp"></iframe>
 </body>
 </html>

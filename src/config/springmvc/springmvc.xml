@@ -43,6 +43,15 @@
         </property>
 	</bean>
 	
-	
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**"/>
+			<mvc:exclude-mapping path="/system/login"/>
+			<mvc:exclude-mapping path="/system/get_cpacha"/>
+			<mvc:exclude-mapping path="/h-ui/**"/>
+			<mvc:exclude-mapping path="/easyui/**"/>
+			<bean class="com.student.hzw.interceptor.LoginInterceptor"></bean>
+		</mvc:interceptor>
+	</mvc:interceptors> 
 	 
 </beans>
