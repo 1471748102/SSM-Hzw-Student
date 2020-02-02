@@ -6,4 +6,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   	<select id="findByUserName" parameterType="String" resultType="User">
   		select * from user where username = #{username}
   	</select>
+  	<update id="add" parameterType="User">
+  		insert into user(id,username,password) values(null,#{username},#{password})
+  	</update>
+  	<select id="findList" parameterType="Map" resultType="User">
+  		select * from user where username like #{username} limit #{offset},#{pageSize}
+  	</select>
+  	<select id="getTotal" parameterType="Map" resultType="Integer">
+  		select count(id) from user where username like #{username}
+  	</select>
 </mapper>

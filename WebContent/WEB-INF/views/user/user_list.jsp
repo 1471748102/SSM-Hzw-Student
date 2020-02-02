@@ -22,7 +22,7 @@
 	        collapsible:false,//是否可折叠的 
 	        fit: true,//自动大小 
 	        method: "post",
-	        url:"get_list?t="+new Date().getTime(),
+	        url:"get_list?t="+new Date().getTime(),//防止浏览器缓存
 	        idField:'id', 
 	        singleSelect:false,//是否单选 
 	        pagination:true,//分页控件 

@@ -10,7 +10,7 @@ import java.util.Random;
 /**
  * 验证码生成器
  * 
- * @author llq
+ * @author hzw
  */
 public class CpachaUtil {
 	
