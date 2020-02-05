@@ -35,5 +35,10 @@ public class UserServiceImpl implements UserService{
 		// TODO Auto-generated method stub
 		return userDao.getTotal(queryMap);
 	}
+	@Override
+	public int edit(User user) {
+		// TODO Auto-generated method stub
+		return userDao.edit(user);
+	}
 	
 }

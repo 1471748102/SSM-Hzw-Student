@@ -54,6 +54,50 @@ public class UserController {
 		ret.put("total", userService.getTotal(queryMap));
 		return ret;
 	}
+	
+	
+	
+	/*
+	 * 编辑用户界面
+	 */
+	@RequestMapping(value="/edit",method=RequestMethod.POST)
+	@ResponseBody
+	public Map<String, String> edit(User user){
+		Map<String, String> ret = new HashMap<String, String>();
+		if(user == null){
+			ret.put("type", "error");
+			ret.put("msg", "数据绑定出错");
+			return ret;
+		}
+		if(StringUtils.isEmpty(user.getUsername())){
+			ret.put("type", "error");
+			ret.put("msg", "用户名不能为空!");
+			return ret;
+		}
+		if(StringUtils.isEmpty(user.getPassword())){
+			ret.put("type", "error");
+			ret.put("msg", "密码不能为空!");
+			return ret;
+		}
+		User existUser = userService.findByUserName(user.getUsername());
+		if(existUser != null){
+			if(user.getId() != existUser.getId()){
+				ret.put("type", "error");
+				ret.put("msg", "该用户名已经存在!");
+				return ret;
+			}
+			
+		}
+		if(userService.edit(user) <= 0){
+			ret.put("type", "error");
+			ret.put("msg", "添加失败!");
+			return ret;
+		}
+		ret.put("type", "success");
+		ret.put("msg", "添加成功!");
+		return ret;
+	}
+	
 	/*
 	 * 添加用户界面
 	 */
