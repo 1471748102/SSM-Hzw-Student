@@ -98,6 +98,38 @@ public class UserController {
 		return ret;
 	}
 	
+	
+	/**
+	 * 删除用户操作
+	 * @param user
+	 * @return
+	 */
+	@RequestMapping(value="/delete",method=RequestMethod.POST)
+	@ResponseBody
+	public Map<String, String> delete(
+			@RequestParam(value="ids[]",required=true) Long[] ids
+		){
+		Map<String, String> ret = new HashMap<String, String>();
+		if(ids == null){
+			ret.put("type", "error");
+			ret.put("msg", "请选择要删除的数据!");
+			return ret;
+		}
+		String idsString = "";
+		for(Long id:ids){
+			idsString += id + ",";
+		}
+		idsString = idsString.substring(0,idsString.length()-1);
+		if(userService.delete(idsString) <= 0){
+			ret.put("type", "error");
+			ret.put("msg", "删除失败!");
+			return ret;
+		}
+		ret.put("type", "success");
+		ret.put("msg", "修改成功!");
+		return ret;
+	}
+	
 	/*
 	 * 添加用户界面
 	 */

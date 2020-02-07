@@ -40,5 +40,10 @@ public class UserServiceImpl implements UserService{
 		// TODO Auto-generated method stub
 		return userDao.edit(user);
 	}
+	@Override
+	public int delete(String ids) {
+		// TODO Auto-generated method stub
+		return userDao.delete(ids);
+	}
 	
 }

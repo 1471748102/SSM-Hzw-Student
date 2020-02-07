@@ -18,4 +18,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   	<update id="edit" parameterType="User">
   		update user set username = #{username},password = #{password} where id = #{id}
   	</update>
+  	<update id="delete" parameterType="String">
+  		delete from user where id in (${value})
+  	</update>
 </mapper>
