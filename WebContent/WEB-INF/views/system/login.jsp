@@ -92,7 +92,7 @@
       <div class="mt-20 skin-minimal" style="text-align: center;">
 		<div class="radio-box">
 			<input type="radio" id="radio-2" name="type" checked value="2" />
-			<label for="radio-1">学生</label>
+			<label for="radio-1">管理员</label>
 		</div>
 		<div class="radio-box">
 			<input type="radio" id="radio-3" name="type" value="3" />
@@ -100,7 +100,7 @@
 		</div>
 		<div class="radio-box">
 			<input type="radio" id="radio-1" name="type" value="1" />
-			<label for="radio-3">管理员</label>
+			<label for="radio-3">学生</label>
 		</div>
 	</div>
       
