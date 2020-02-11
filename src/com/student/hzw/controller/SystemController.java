@@ -53,7 +53,16 @@ public class SystemController {
 		model.setViewName("system/login");
 		return model;
 	}
-	
+	/**
+	 * ×¢ÏúµÇÂ¼ 
+	 * @param request
+	 * @return
+	 */
+	@RequestMapping(value = "/login_out",method=RequestMethod.GET)
+	public String loginOut(HttpServletRequest request){
+		request.getSession().setAttribute("user", null);
+		return "redirect:login";
+	}
 	
 	//-------------------------------------------------------------------------------------------------------------------------------------------------------
 	/**
